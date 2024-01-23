@@ -1,0 +1,127 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.pdd {
+  @include adaptiveValue("padding-top", 100, 40);
+  @include adaptiveValue("padding-bottom", 100, 40);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: toRem(2) solid transparent;
+  padding: toRem(16);
+  height: toRem(70);
+  transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+  border-radius: toRem(20);
+  font-size: toRem(16);
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+  @media (min-width:$mobileSmall){
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      border-radius: 0 toRem(14) toRem(14) 0;
+      z-index: 0;
+      background-color: #000;
+      transition: width .35s ease;
+    }
+    span {
+      z-index: 1;
+    }
+  }
+  @media (any-hover: hover){
+    &:hover{
+      color: #fff;
+      &::before {
+        width: 110%;
+      }
+    }
+  }
+  // .btn_01
+  &_01 {
+    border-color: #000;
+    background-color: $green;
+  }
+}
+
+.btn-action {
+  position: relative;
+  @media (min-width:$mobileSmall){
+     max-width: toRem(340); 
+  }
+		// .btn-action__btn
+		&__btn {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 14, 10,0,$containerWidth,480);
+      }
+		}
+		// .btn-action__txt
+		&__txt {
+      @media (min-width:$mobileSmall){
+        text-align: center;
+        font-size: toRem(14);
+        font-weight: 700;
+        line-height: normal;
+        max-width: toRem(300); 
+        margin: 0 auto;
+      }
+      @media (max-width:$mobileSmall){
+         display: none; 
+      }
+		}
+		// .btn-action__arrow
+		&__arrow {
+      @media (min-width:$mobileSmall){
+        position: absolute;
+        top: 50%;
+        right: -70px;
+        transform: translate(0, -45%) scaleX(-1);
+        height: toRem(84);
+      }
+      @media (max-width:$mobileSmall){
+         display: none; 
+      }
+		}
+}
+
+.font-txt {
+  @include adaptiveValue("font-size", 26, 22,0,$containerWidth,480);
+  font-weight: 700;
+  line-height: normal;
+}
+
+.split-text {
+  .line {
+    display: inline-block !important;
+    width: auto !important;
+    position: relative;
+    &::before {
+      content:'';
+      position: absolute;
+      width: calc(100% + 15px);
+      height: 110%;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -44%);
+      border-radius: toRem(10);
+    }
+  }
+  &.mark-yellow {
+    .line {
+      &::before {
+        background-color: $yellow;
+      }
+    }
+  }
+    .mark-pink & {
+      background-color: $pink;
+  }
+} 

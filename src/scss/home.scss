@@ -1,0 +1,134 @@
+.hero {
+  background-color: $pink;
+  background-image: url(../img/bg.png);
+  // background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; 
+  // .hero__container
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+  // .hero__main
+  &__main {
+  }
+  // .hero__title
+  &__title {
+    @include adaptiveValue("font-size", 42, 34,0,$containerWidth,480);
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: toRem(30);
+    @media (max-width:$mobile){
+       text-align: center; 
+    }
+  }
+  // .hero__sub-title
+  &__sub-title {
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+    }
+    @media (min-width:em(570.98)){
+      max-width: 575px;
+    }
+    @media (max-width:$mobile){
+       text-align: center; 
+      }
+      @media (max-width:$mobile) and (min-width: em(570.98)){
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  // .hero__txt
+  &__txt {
+    @include adaptiveValue("font-size", 20, 18,0,$containerWidth,480);
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: toRem(20);
+    @media (min-width:em(420.98)){
+      max-width: toRem(430);
+    }
+    @media (max-width:$mobile) and (min-width: em(420.98)){
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width:$mobile){
+       text-align: center; 
+    }
+  }
+  // .hero__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: toRem(10);
+    max-width: toRem(430);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 20,0,$containerWidth,480);
+    }
+    @media (max-width:$mobile) and (min-width: em(420.98)){
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  // .hero__item
+  &__item {
+  }
+  // .hero__btn-action
+  &__btn-action {
+    @media (max-width:$mobile) and (min-width: em(420.98)){
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  // .hero__bg
+  &__bg {
+    z-index: -2;
+    @include adaptiveValue("max-width", 568, 400,2,$containerWidth,768.98);
+    @media (min-width:$mobile){
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    @media (max-width:$mobile){
+       position: relative; 
+       margin-top: toRem(-75);
+       margin-bottom: toRem(-20);
+    }
+  }
+  // .hero__image
+  &__image {
+    width: 100%;
+  }
+}
+
+.item-hero {
+  position: relative;
+  border-radius: toRem(10);
+  border: toRem(2) solid #000;
+  background-color: #fff;
+  @include adaptiveValue("min-height", 55, 45,0,$containerWidth,480);
+  display: flex;
+  align-items:end;
+  justify-content: center;
+  padding-bottom: toRem(15);
+  // .item-hero__ic
+  &__ic {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (min-width:$mobileSmall){
+      top: -11px;
+       width: toRem(22); 
+    }
+    @media (max-width:$mobileSmall){
+      top: -9px;
+       width: toRem(18); 
+    }
+  }
+  // .item-hero__txt
+  &__txt {
+    @include adaptiveValue("font-size", 16, 12,0,$containerWidth,480);
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"SMM-двіж Вебінар"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="hero pdd">
+					<div class="hero__container">
+						<div class="hero__main">
+							<h1 class="hero__title">
+								Новий вимір SMM — Ком’юніті 360
+							</h1>
+							<p class="hero__sub-title font-txt split-text mark-yellow">
+								Як з нуля стати затребуваним SMM-ником та працювати з проектами від 1000$ віддалено та в ком’юніті
+							</p>
+							<div class="hero__bg">
+								<picture>
+									<source
+											media="(max-width: 30.06125em)"
+											srcset="img/pictures/hero-mob.webp, img/pictures/hero-mob@2x.webp 2x"
+											type="image/webp">
+									<source
+											srcset="img/pictures/hero.webp, img/pictures/hero@2x.webp 2x"
+											type="image/webp">
+									<source
+											media="(max-width: 30.06125em)"
+											srcset="img/pictures/hero-mob.png, img/pictures/hero-mob@2x.png 2x"
+											type="image/png">
+									<source
+											srcset="img/pictures/hero.png, img/pictures/hero@2x.png 2x"
+											type="image/png">
+									<img
+											src="img/pictures/hero.png"
+											srcset="img/pictures/hero@2x.png 2x"
+											alt="Hero Image"
+											class="hero__image">
+								</picture>
+							</div>
+							<p class="hero__txt">
+								Покроковий план дій в SMM-професії для початківців:
+							</p>
+							<ul class="hero__list">
+								<li class="hero__item item-hero">
+									<img src="@img/icon/check.svg" class="item-hero__ic" alt="іконка чекбокс">
+									<p class="item-hero__txt">
+										Онлайн
+									</p>
+								</li>
+								<li class="hero__item item-hero">
+									<img src="@img/icon/check.svg" class="item-hero__ic" alt="іконка чекбокс">
+									<p class="item-hero__txt">
+										Безкоштовно
+									</p>
+								</li>
+								<li class="hero__item item-hero">
+									<img src="@img/icon/check.svg" class="item-hero__ic" alt="іконка чекбокс">
+									<p class="item-hero__txt">
+										1 лютого 2024
+									</p>
+								</li>
+							</ul>
+							<div class="hero__btn-action btn-action">
+								<a href="#"  class="btn-action__btn btn btn_01">
+									<span>Зареєструватись</span>
+								</a>
+								<p class="btn-action__txt">
+									Отримай запрошення в ТГ та приймай участь у розіграші подарунків
+								</p>
+								<img class="btn-action__arrow" src="@img/icon/arrow.svg" alt="arrow icon">
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		<script src="https://unpkg.com/split-type"></script>
+		@@include('html/_js.htm',{})
+	</body>
+</html>
