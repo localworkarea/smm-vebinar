@@ -1,4 +1,14 @@
 // Заголовки, загальні БЕМ блоки та інше...
+.bg-img {
+  background-image: url(../img/bg.png);
+  background-position: center;
+  @media (min-width:$mobileSmall){
+    background-size: contain; 
+  }
+  @media (max-width:$mobileSmall){
+    background-size: cover;
+  }
+}
 .pdd {
   @include adaptiveValue("padding-top", 100, 40);
   @include adaptiveValue("padding-bottom", 100, 40);
@@ -121,7 +131,38 @@
       }
     }
   }
-    .mark-pink & {
-      background-color: $pink;
+  &.mark-pink {
+    .line {
+      &::before {
+        background-color: $pink;
+      }
+    }
   }
 } 
+
+.line-bg {
+  display: inline-block;
+  position: relative;
+  &::before {
+    content:'';
+    position: absolute;
+    width: calc(100% + 15px);
+    height: 120%;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -46%);
+    border-radius: toRem(7);
+    background-color: $blue-E5 
+  }
+}
+
+.title-big {
+  text-align: center;
+  @include adaptiveValue("font-size", 40, 36,0,$containerWidth,480);
+  font-weight: 700;
+  line-height: normal;
+  &:not(:last-child) {
+    margin-bottom: toRem(30);
+  }
+}
