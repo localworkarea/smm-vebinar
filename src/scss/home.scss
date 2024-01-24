@@ -374,10 +374,10 @@
   // .result__bg
   &__bg {
     z-index: -1;
-    @include adaptiveValue("max-width", 500, 360,2,$containerWidth,768.98);
+    @include adaptiveValue("max-width", 520, 360,2,$containerWidth,768.98);
     @media (min-width:$mobile){
       position: absolute;
-      left: 20px;
+      left: 0;
       top: 50%;
       transform: translateY(-50%);
     }

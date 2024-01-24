@@ -1,13 +1,7 @@
 // Заголовки, загальні БЕМ блоки та інше...
 .bg-img {
-  background-image: url(../img/bg.png);
-  background-position: center;
-  @media (min-width:$mobileSmall){
-    background-size: contain; 
-  }
-  @media (max-width:$mobileSmall){
-    background-size: cover;
-  }
+  background-image: url(../img/bg-2.png);
+  background-repeat:repeat;
 }
 .pdd {
   @include adaptiveValue("padding-top", 100, 40);
