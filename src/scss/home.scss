@@ -137,8 +137,11 @@
 
 // =======================================================
 .program {
+  background-color: #fff;
   // .program__container
   &__container {
+    position: relative;
+    z-index: 5;
   }
   // .program__title
   &__title {
@@ -168,12 +171,18 @@
 .items-program {
   display: grid;
   @include adaptiveValue("margin-bottom", 50, 40,0,$containerWidth,480);
-  @media (min-width:$mobile){
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: toRem(20);
+  row-gap: toRem(65); 
+
+  
+  @media (min-width:em(900.98)){
+    grid-template-columns: repeat(6, 1fr);
   }
-  @media (max-width:$mobile){
-     row-gap: toRem(65); 
+  @media (max-width: em(900.98)){
+      grid-template-columns: repeat(2,1fr);
+      column-gap: toRem(20);
+  }
+  @media (max-width:em(700.98)){
+    grid-template-columns: 1fr;
   }
   // .items-program__item
   &__item {
@@ -185,11 +194,41 @@
     height: toRem(170);
     display: flex;
     align-items: flex-end;
-    @media (min-width:em(360.98)){
+
+    @media (min-width:em(900.98)){
+      grid-column: span 2;
+    }
+
+    &:nth-child(1) {
+      @media (min-width:em(900.98)){
+        margin-right: 10px;
+      }
+    }
+    &:nth-child(2) {
+      // margin: 0 10px;
+    }
+    &:nth-child(3) {
+      @media (min-width:em(900.98)){
+        margin-left: 10px;
+      }
+    }
+    &:nth-child(4) {
+      @media (min-width:em(900.98)){
+        margin: 0 10px 0 0;
+        grid-column: 2/4;
+      }
+    }
+    &:nth-child(5) {
+      @media (min-width:em(900.98)){
+        margin:  0 0 0 10px;
+        grid-column: 4/6;
+      }
+    }
+    @media (min-width:em(355.98)){
       padding: toRem(35) toRem(30);
     }
-    @media (max-width: em(360.98)){
-      padding: toRem(35) toRem(30) toRem(30);
+    @media (max-width: em(355.98)){
+      padding: toRem(35) toRem(25) toRem(25);
     }
   }
   // .items-program__num
@@ -215,7 +254,7 @@
   &__txt {
     @include adaptiveValue("font-size", 22, 18,2,$containerWidth,768.98);
     text-align: center;
-    font-weight: 700;
+    font-weight: 400;
     @media (max-width:$mobile){
        font-size: toRem(22); 
     }
@@ -307,6 +346,7 @@
 
 // ======================================================
 .brands {
+  background-color: #fff;
   // .brands__container
   &__container {
   }

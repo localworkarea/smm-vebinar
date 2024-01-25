@@ -53,6 +53,25 @@
     border-color: #000;
     background-color: $green;
   }
+  // .btn_02
+  &_02 {
+    border-color: #000;
+    background-color: #fff;
+    color: #000;
+    @media (min-width:$mobileSmall){
+      &::before {
+        background-color: $green;
+      }
+      span {
+        z-index: 1;
+      }
+    }
+    @media (any-hover: hover){
+      &:hover{
+        color: #000;
+      }
+    }
+  }
 }
 
 .btn-action {

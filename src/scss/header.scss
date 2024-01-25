@@ -6,37 +6,49 @@
   z-index: 20;
   background-color: $mainColor;
   color: #fff;
+  padding: toRem(23) 0;
   @media (min-width:$mobile){
-    padding: toRem(23) 0;
      display: flex;
      align-items: center;
   }
-  @media (max-width:$mobile){
-    padding: toRem(15) 0;
-  }
   // .header__container
   &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    column-gap: toRem(40);
+    @media (min-width:em(650.98)){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: toRem(40);
+    }
     @media (min-width:$mobile){
        width: 100%; 
     }
   }
+	// .header__block
+	&__block {
+    display: flex;
+    align-items: center;
+    gap: toRem(20);
+    @media (max-width: em(650.98)){
+        justify-content: space-between;
+    }
+	}
   // .header__txt
   &__txt {
     font-weight: 700;
     line-height: normal;
     font-size: toRem(14);
     max-width: toRem(317);
+    @media (max-width:em(650.98)){
+      text-align:right;
+      max-width: 250px;
+    }
   }
   // .header__logo
   &__logo {
     display: inline-block;
     flex: 0 0 auto;
     @media (min-width:$mobileSmall){
-       max-width: toRem(56); 
+       max-width: toRem(60); 
     }
     @media (max-width:$mobileSmall){
         max-width: toRem(44);
@@ -45,5 +57,17 @@
       max-width: 100%;
     }
   }
+	// .header__btn-action
+	&__btn-action {
+    @media (max-width:em(650.98)){
+        display: none;
+    }
+    .btn-action__btn {
+      height: toRem(50) !important;
+      font-size: toRem(14) !important;
+      width: toRem(240);
+      border-radius: toRem(14);
+    }
+	}
 }
 
