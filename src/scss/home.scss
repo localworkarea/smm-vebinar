@@ -28,7 +28,9 @@
   // .hero__sub-title
   &__sub-title {
     &:not(:last-child) {
-      margin-bottom: toRem(40);
+      @media (min-width:$mobileSmall){
+        margin-bottom: toRem(40);
+      }
     }
     @media (min-width:em(570.98)){
       max-width: 575px;
@@ -93,8 +95,11 @@
     }
     @media (max-width:$mobile){
        position: relative; 
-       margin-top: toRem(-75);
+       margin-top: toRem(-50);
        margin-bottom: toRem(-20);
+    }
+    @media (max-width:$mobileSmall){
+       margin-top: toRem(-20); 
     }
   }
   // .hero__image
@@ -397,6 +402,7 @@
     }
     @media (min-width:$mobile){
       max-width: 49%;
+      width: 100%;
     }
   }
   // .result__title
