@@ -658,7 +658,7 @@ body {
   margin-bottom: 1.25rem;
 }
 
-@media (min-width: 22.24875em) {
+@media (min-width: 23.49875em) {
   .items-program__item {
     padding: 2.1875rem 1.875rem;
   }
@@ -1091,7 +1091,7 @@ body {
   }
 
   .items-program__txt {
-    font-size: 1.375rem;
+    font-size: 1.375rem !important;
   }
 
   .result__sub-title {
@@ -1164,9 +1164,15 @@ body {
   }
 }
 
-@media (max-width: 22.24875em) {
+@media (max-width: 23.49875em) {
   .items-program__item {
     padding: 2.1875rem 1.5625rem 1.5625rem;
+  }
+}
+
+@media (max-width: 21.93625em) {
+  .items-program__txt {
+    font-size: 1.25rem !important;
   }
 }
 

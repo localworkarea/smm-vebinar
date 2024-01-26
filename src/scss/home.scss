@@ -229,10 +229,10 @@
         grid-column: 4/6;
       }
     }
-    @media (min-width:em(355.98)){
+    @media (min-width:em(375.98)){
       padding: toRem(35) toRem(30);
     }
-    @media (max-width: em(355.98)){
+    @media (max-width: em(375.98)){
       padding: toRem(35) toRem(25) toRem(25);
     }
   }
@@ -261,8 +261,12 @@
     text-align: center;
     font-weight: 400;
     @media (max-width:$mobile){
-       font-size: toRem(22); 
+       font-size: toRem(22) !important; 
     }
+    @media (max-width:em(350.98)){
+       font-size: toRem(20) !important; 
+    }
+    
   }
   // .items-program__ellips
   &__ellips {
